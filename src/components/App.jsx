@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Feedback } from "./FeedbackOptons/FeedbackOpt";
 import { Statistics } from "./Statistics/Statistics";
+import { Section } from "./Section/Section";
 
 export class App extends Component {
   
@@ -25,17 +26,24 @@ export class App extends Component {
     return total ? Math.round((good / total) * 100) : 0;
   };
     
-    render(){
-      return (
-    <div>
-          <Feedback
-            onFeedback={this.handleFeedback} />
+  render() {
+    const { good, neutral, bad } = this.state;
+    
+    return (
+      <div>
+        <Section title="Please leave feedback">
+          <Feedback onFeedback={this.handleFeedback} />
+        </Section>
+        <Section title="Statistics">
           <Statistics
-            feedbackQuantity={this.state}
-            totalFeedback={this.countTotalFeedback}
-            positiveFeedback={this.countPositiveFeedbackPercent}
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercent()}
           />
-    </div>
-    )
-  };
-};
+        </Section>
+      </div>
+    );
+  }
+}

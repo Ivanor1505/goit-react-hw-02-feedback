@@ -8,7 +8,6 @@ export class Feedback extends Component {
 
     return (
       <FeedbackBox>
-        <h2>Please leave feedback</h2>
         <button onClick={()=>onFeedback("good")}>Good</button>
         <button onClick={()=>onFeedback("neutral")}>Neutral</button>
         <button onClick={()=>onFeedback("bad")}>Bad</button>

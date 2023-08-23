@@ -3,16 +3,15 @@ import { StatisticsBox } from "./Statistics. styled";
 
 export class Statistics extends Component{
     render() {
-        const { feedbackQuantity } = this.props;
+        const { good, neutral, bad, total, positivePercentage } = this.props;
 
         return (
             <StatisticsBox>
-            <h2>Statistacs</h2>
-            <p>Good: {feedbackQuantity.good}</p>
-            <p>Neutral: {feedbackQuantity.neutral}</p>
-            <p>Bad: {feedbackQuantity.bad}</p>
-            <p>Total: {this.props.totalFeedback()}</p>
-            <p>Positive feedback: {this.props.positiveFeedback()}%</p>
+            <p>Good: {good}</p>
+            <p>Neutral: {neutral}</p>
+            <p>Bad: {bad}</p>
+            <p>Total: {total}</p>
+            <p>Positive feedback: {positivePercentage}%</p>
             </StatisticsBox> 
                 );
             }
