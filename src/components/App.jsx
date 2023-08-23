@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Feedback } from "./Feedback/Feedback";
+import { Feedback } from "./FeedbackOptons/FeedbackOpt";
 import { Statistics } from "./Statistics/Statistics";
 
 export class App extends Component {
@@ -28,8 +28,13 @@ export class App extends Component {
     render(){
       return (
     <div>
-          <Feedback onFeedback={this.handleFeedback} />
-        <Statistics feedbackQuantity = {this.state}/>
+          <Feedback
+            onFeedback={this.handleFeedback} />
+          <Statistics
+            feedbackQuantity={this.state}
+            totalFeedback={this.countTotalFeedback}
+            positiveFeedback={this.countPositiveFeedbackPercent}
+          />
     </div>
     )
   };

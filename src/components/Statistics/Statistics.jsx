@@ -11,6 +11,8 @@ export class Statistics extends Component{
             <p>Good: {feedbackQuantity.good}</p>
             <p>Neutral: {feedbackQuantity.neutral}</p>
             <p>Bad: {feedbackQuantity.bad}</p>
+            <p>Total: {this.props.totalFeedback()}</p>
+            <p>Positive feedback: {this.props.positiveFeedback()}%</p>
             </StatisticsBox> 
                 );
             }

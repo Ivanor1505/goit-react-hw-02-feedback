@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FeedbackBox } from "./Feedback.styled";
+import { FeedbackBox } from "./FeedbackOpt.styled";
 
 
 export class Feedback extends Component {
