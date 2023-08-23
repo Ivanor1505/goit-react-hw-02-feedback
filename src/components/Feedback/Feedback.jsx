@@ -1,14 +1,17 @@
+import React, { Component } from 'react';
 import { FeedbackBox } from "./Feedback.styled";
 
-export const Feedback = () => {
+
+export class Feedback extends Component {
+  render() {
+    const { onFeedback } = this.props;
+
     return (
-        <FeedbackBox><h2>Please leave feedback</h2>
-        <button>Good</button>
-        <button>Neutral</button>
-        <button>Bad</button>
-        <h2>Statistacs</h2>
-        <p>Good:</p>
-        <p>Neutral:</p>
-        <p>Bad:</p></FeedbackBox>
-          );
+      <FeedbackBox>
+        <h2>Please leave feedback</h2>
+        <button onClick={()=>onFeedback("good")}>Good</button>
+        <button onClick={()=>onFeedback("neutral")}>Neutral</button>
+        <button onClick={()=>onFeedback("bad")}>Bad</button>
+      </FeedbackBox>
+                );}
 };
