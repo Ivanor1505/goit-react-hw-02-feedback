@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import { FeedbackBox } from "./FeedbackOpt.styled";
+import React from 'react';
+import { FeedbackBox } from './FeedbackOpt.styled';
 
-
-export class Feedback extends Component {
-  render() {
-    const { onFeedback } = this.props;
-
-    return (
-      <FeedbackBox>
-        <button onClick={()=>onFeedback("good")}>Good</button>
-        <button onClick={()=>onFeedback("neutral")}>Neutral</button>
-        <button onClick={()=>onFeedback("bad")}>Bad</button>
-      </FeedbackBox>
-                );}
-};
+export function Feedback({ options, onFeedback }) {
+  return (
+    <FeedbackBox>
+      {options.map(option => (
+        <button key={option} onClick={() => onFeedback(option)}>
+          {option}
+        </button>
+      ))}
+    </FeedbackBox>
+  );
+}

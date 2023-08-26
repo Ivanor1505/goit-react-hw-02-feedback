@@ -1,5 +1,5 @@
-import React from "react";
-import { SectionBox } from "./Section.styled";
+import React from 'react';
+import { SectionBox } from './Section.styled';
 
 export function Section({ title, children }) {
   return (
